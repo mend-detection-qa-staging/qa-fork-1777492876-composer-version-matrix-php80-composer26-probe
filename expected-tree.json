@@ -1,0 +1,44 @@
+{
+    "schema_version": "1.0",
+    "pm": "composer",
+    "pm_version_tested": "2.6",
+    "lockfile": "composer.lock",
+    "pattern": "version-matrix",
+    "notes": "PHP 8.0 + Composer 2.6 toolchain cell. monolog/monolog ^2.0 resolves to 2.11.0. Single transitive dep psr/log 3.0.2. All packages from Packagist registry. Lockfile plugin-api-version: 2.6.0.",
+    "packages": [
+        {
+            "name": "monolog/monolog",
+            "version": "2.11.0",
+            "scope": "require",
+            "source": "registry",
+            "direct": true,
+            "children": [
+                {
+                    "name": "psr/log",
+                    "version": "3.0.2",
+                    "scope": "require",
+                    "source": "registry",
+                    "direct": false,
+                    "children": []
+                }
+            ]
+        }
+    ],
+    "total_packages": 2,
+    "direct_count": 1,
+    "transitive_count": 1,
+    "unique_packages": [
+        "monolog/monolog:2.11.0",
+        "psr/log:3.0.2"
+    ],
+    "mend_detection_expectations": {
+        "all_packages_must_appear": true,
+        "source_for_all": "registry",
+        "no_missing_transitives": true,
+        "failure_modes_exercised": [
+            "missing transitive dep (psr/log) when toolchain versioning is mis-applied",
+            "wrong resolved version if Mend re-resolves instead of reading lockfile",
+            "detection gap when php platform constraint differs from runner"
+        ]
+    }
+}

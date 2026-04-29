@@ -1,0 +1,16 @@
+{
+    "name": "acme/version-matrix-php80-composer26",
+    "description": "Version-matrix probe: PHP 8.0 + Composer 2.6. Tests Mend detection with legacy-but-supported toolchain.",
+    "type": "project",
+    "license": "MIT",
+    "require": {
+        "php": ">=8.0",
+        "monolog/monolog": "^2.0"
+    },
+    "config": {
+        "preferred-install": "dist",
+        "sort-packages": true
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
